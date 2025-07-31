@@ -1,22 +1,34 @@
 import { useEffect, useState } from "react";
 
+import { getPopularMovies } from "../services/tmdb";
+
 function MovieList() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    fetch("https://api.themoviedb.org/3/movie/popular?api_key=6fc5b213534156965cf3818a9043b8b9")
-      .then((res) => res.json())
-      .then((data) => setMovies(data.results));
+    const fetchData = async () => {
+      const data = await getPopularMovies();
+      setMovies(data);
+    };
+    fetchData();
   }, []);
 
   return (
-    <div>
-      {movies.map((movie) => (
-        <div key={movie.id}>
-          <h3>{movie.title}</h3>
-          <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
-        </div>
-      ))}
+    <div style={{ padding: "20px" }}>
+      <h2>Popular Movies</h2>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
+        {movies.map((movie) => (
+          <div key={movie.id} style={{ width: "200px", textAlign: "center" }}>
+            <img
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              alt={movie.title}
+              width="200"
+            />
+            <h4>{movie.title}</h4>
+            <p>⭐ {movie.vote_average}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
