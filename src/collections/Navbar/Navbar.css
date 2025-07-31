@@ -1,0 +1,24 @@
+.navbar{
+    background-color: #032541;
+    padding: 0px 10px;
+}
+
+.navbar img{
+    height: 48px;
+    width: 170px;
+}
+
+.left-navbar{
+    padding-left: 220px;
+}
+
+.right-ul{
+    height: 40px;
+    gap: 20px;
+    padding: 12px 220px 0px 0px;
+}
+
+.right-ul img{
+    height: 27px;
+    width: 45px;
+}

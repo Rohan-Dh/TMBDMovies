@@ -3,7 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import MovieList from "./collections/MovieList.jsx";
-import Navbar from "./collections/Navbar.jsx";
+import Navbar from "./collections/Navbar/Navbar.jsx";
 import "bootstrap/dist/css/bootstrap.css";
 
 function App() {
