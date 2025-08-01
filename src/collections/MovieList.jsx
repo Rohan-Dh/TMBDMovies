@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { getPopularMovies } from "../services/tmdb";
+import "./movieList.css";
 
 function MovieList() {
   const [movies, setMovies] = useState([]);
@@ -19,7 +20,11 @@ function MovieList() {
       <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
         {console.log(movies)}
         {movies.map((movie) => (
-          <div className="movie-card" key={movie.id} style={{ width: "200px", textAlign: "center" }}>
+          <div
+            className="movie-card"
+            key={movie.id}
+            style={{ width: "200px", textAlign: "center" }}
+          >
             <img
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt={movie.title}

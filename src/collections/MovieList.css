@@ -4,7 +4,6 @@
   border-radius: 12px;
   overflow: hidden;
   background-color: #1c1c1c;
-  color: white;
   transition: transform 0.3s;
   position: relative;
 }
@@ -33,7 +32,6 @@
   position: absolute;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.9);
-  color: white;
   font-size: 0.75rem;
   padding: 0.5rem;
   transform: translateY(100%);
