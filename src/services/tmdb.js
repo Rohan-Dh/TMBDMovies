@@ -4,7 +4,6 @@ const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 const BASE_URL = "https://api.themoviedb.org/3";
 
 export const getPopularMovies = async () => {
-    console.log("TMDB API KEY:", API_KEY);
   try {
     const response = await axios.get(`${BASE_URL}/movie/popular`, {
       params: {
@@ -19,3 +18,21 @@ export const getPopularMovies = async () => {
     return [];
   }
 };
+
+// export const getAPIData = async (query = "", filePath) => {
+//     try{
+//         const response = await axios.get(`${BASE_URL}/${filePath}`, {
+//             params:{
+//                 api_key: API_KEY,
+//                 query,
+//                 language:"en-US",
+//                 page:1,
+//                 include_adult: false, 
+//             }
+//         });
+//         return respons.data.results;
+//     }catch(error){
+//         console.log("Error fetching the requested data: ", error);
+//         return [];
+//     }
+// }
